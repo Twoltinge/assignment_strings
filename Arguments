@@ -1,0 +1,23 @@
+# Part 1: Greet Template
+def greet(name, greeting='Hello, <name>!'):
+    return(greeting.replace('<name>', name))
+
+print(greet('Talitha', "What's up, <name>!"))
+
+
+# Part 2: Force
+def force(mass, body='earth'):
+    gravity_dict = {'Sun': 274.0, 'Jupiter': 24.92, 'Neptune': 11.15, 'Saturn': 10.44, 'Earth': 9.798, 'Uranus': 8.87, 'Venus': 8.87, 'Mars': 3.71, 'Mercury': 3.7, 'Moon': 1.62, 'Pluto': 0.58}
+    gravity_dict_lower = {key.lower(): val for key, val in gravity_dict.items()}
+    body = round(gravity_dict_lower.get(body), 1)
+    force_calculated = mass * body
+    return force_calculated
+
+print(force(2, 'venus'))
+
+# Part 3: Gravity
+def pull(m1, m2, d):
+  pull_calculation = 6.674 * 10 ** -11 * m1 * m2 / d ** 2
+  return pull_calculation
+
+print(pull(800, 1500, 3))
